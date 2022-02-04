@@ -12,3 +12,4 @@ for rank, name in female_baby_names_2012.items():
 for rank in sorted(names_by_rank, reverse=True)[:10]:
     # Print each item
     print(names_by_rank[rank])
+    
