@@ -1,0 +1,18 @@
+# Convertendo strings para datetimes
+
+# import the datetime object from datetime
+from datetime import datetime
+import pandas as pd
+
+cta = pd.read_csv("/Users/lucasmartins/Documents/LucasMartins/Cursos/DataCamp/Data-types/chicago_transit_authority.csv")
+
+cta.rename(columns={"date":"dates_list"}, inplace=True)
+
+# Iterate over the dates_list
+
+for date_str in cta["dates_list"]:
+    cta["datetimes_list"] = datetime.strptime(date_str, '%m/%d/%Y')
+
+    print(cta['datetimes_list'][:10])
+
+print(cta)
